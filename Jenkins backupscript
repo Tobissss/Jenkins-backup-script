@@ -1,0 +1,11 @@
+#!/bin/bash
+#Purpose: Backup jenkins home directory
+#AUthur: Tobenna Okoli
+#Version: 1.0
+SRC=/var/lib/jenkins
+DST=/home/jenkins_backups
+DATE=`date +%F`
+
+[ -e $DST ] || mkdir -p $DST
+
+tar -cvzf $DST/jenkins-$DATE.tar.gz $SRC
